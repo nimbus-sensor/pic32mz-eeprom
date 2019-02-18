@@ -1,7 +1,7 @@
 # pic32mz-eeprom
 Working demo of reading and writing from [Pic32mz ef starter kit](https://www.microchip.com/Developmenttools/ProductDetails/Dm320007#additional-summary) (Pic32mz2048efh144 MCU) to [25LC256 EEPROM](https://www.microchip.com/wwwproducts/en/25LC256) via SPI. I found a lot of resources relating to the 25LC256; however, there seemed to be a lack of info using the Pic32mz. The two key files used are eeprom.h and eeprom.c
 
-[This repo](https://github.com/hexagon5un/AVR-Programming/tree/master/Chapter16_SPI/spiEEPROMDemo), which uses an Atmel chip with the same EEPROM, so this simple, clean code served as a strong influence for interfacing between my mcu and eeprom. I commented out the functions that I didn't test (because I didn't personally need it). This [blog](http://aidanmocke.com/blog/2018/09/01/spi-sd/) also really helped in understanding SPI with Pic32mz.
+[This repo](https://github.com/hexagon5un/AVR-Programming/tree/master/Chapter16_SPI/spiEEPROMDemo), which uses an Atmel chip with the same EEPROM, contained simple, clean code and served as a strong influence for interfacing between my mcu and eeprom. I commented out the functions that I didn't test (because I didn't personally need it). This [blog](http://aidanmocke.com/blog/2018/09/01/spi-sd/) also really helped in understanding SPI with Pic32mz.
 
 The demo is writing and reading to/from EEPROM, then outputting the data (from eeprom) via Uart. I sent it to an Arduino board. I'm using SPI1 and my configuration setup for this is in SPI_Init(). This eeprom uses SPI Mode 0, so this is configured by setting:
 ```cpp 
