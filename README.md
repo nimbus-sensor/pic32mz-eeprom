@@ -8,7 +8,7 @@ The demo is writing and reading to/from EEPROM, then outputting the data (from e
 SPI1CONbits.CKP = 0; // using SPI mode 0 - CPOL = 0
 SPI1CONbits.CKE = 1; // using SPI mode 0 - CPHA = 0
 ``` 
-This eeprom operates at max 10 MHz, so the SPI clock needs to be lowered in the configuration by setting SPI1BRG. This SPI pins (SDI, SDO, SCK, & SS) are configured in this function as well. In eeprom.h, set to match your SS pin:
+This eeprom operates at max 10 MHz, so the SPI clock needs to be lowered in the configuration by setting SPI1BRG. SPI pins (SDI, SDO, SCK, & SS) are configured in this function as well. In eeprom.h, set to match your SS pin:
 ```cpp 
 #define SLAVE_SELECT    LATDbits.LATD0 = 0; // select slave device (low)
 #define SLAVE_DESELECT  LATDbits.LATD0 = 1; // deselect slave device (high)
@@ -22,7 +22,7 @@ while(!SPI1STATbits.SPIRBF);
 ### Resources:
 
 **[Pic32mz ef starter kit](https://www.microchip.com/Developmenttools/ProductDetails/Dm320007#additional-summary)**
-- [Datasheet](https://github.com/square/certstrap)
+- [Datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/60001320E.pdf)
 
 
 **[25LC256 EEPROM](https://www.microchip.com/wwwproducts/en/25LC256)**
